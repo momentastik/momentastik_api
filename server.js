@@ -1,6 +1,6 @@
 
 var http = require('http');
-var port = Number(process.env.PORT||1337);
+var port = Number(process.env.PORT||4000);
 http.createServer(function (req, resp) {
 
   if (req.method === 'GET'){
