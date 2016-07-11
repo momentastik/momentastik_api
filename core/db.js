@@ -1,7 +1,7 @@
 var mySQLDB = require('mysql');
 var settings = require('../settings');
 
-exports.executeSQL(sql, callback){
+exports.executeSQL = function(sql, callback){
 	var dbConnection = mySQLDB.createConnection (settings.dbConfig);
 	
 	dbConnection.connect (function (error){

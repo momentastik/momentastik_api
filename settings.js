@@ -7,3 +7,16 @@ exports.dbConfig = {
 
 exports.webPort = 1337;
 
+
+exports.headerResponse = {
+	"Content-type": "application/json"
+};
+
+exports.displayError = function(err){
+
+	return {
+		error: "Error ocurred: " + err
+	}
+};
+	
+
