@@ -1,0 +1,58 @@
+
+DROP DATABASE IF EXISTS momentastik;
+
+CREATE DATABASE momentastik;
+
+USE momentastik;
+
+
+CREATE TABLE IF NOT EXISTS TypeUser (
+ type ENUM ('Admin', 'Moderator', 'User','Town_hall') PRIMARY KEY NOT NULL DEFAULT 'User' 
+
+);
+
+
+CREATE TABLE IF NOT EXISTS User (
+id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(30) NOT NULL,
+email VARCHAR(30) NOT NULL,
+userConfirmed TINYINT(1) NOT NULL DEFAULT 0,
+password VARCHAR(30) NOT NULL,
+accountEnable TINYINT(1) NOT NULL DEFAULT 1,
+typeUser ENUM ('Admin', 'Moderator', 'User','Town_hall'),
+FOREIGN KEY(typeUser) REFERENCES TypeUser(type)
+
+);
+
+
+CREATE TABLE IF NOT EXISTS Place (
+id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(30),
+longi FLOAT(10,6),
+lati FLOAT(10,6),
+description VARCHAR(600) NULL
+);
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS ScoreCommentEvent (
+id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+score TINYINT(5) NULL,
+text TEXT NULL,
+idUser INTEGER,
+idEvent INTEGER,
+FOREIGN KEY (idUser) REFERENCES User(id),
+FOREIGN KEY (idEvent) REFERENCES Event(id)
+);
+
+CREATE TABLE IF NOT EXISTS ScoreCommentPlace (
+id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+score TINYINT(5) NULL,
+text TEXT NULL,
+idUser INTEGER,
+idPlace INTEGER,
+FOREIGN KEY (idUser) REFERENCES User(id),
+FOREIGN KEY (idPlace) REFERENCES Place(id)
+);
