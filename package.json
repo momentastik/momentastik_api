@@ -1,0 +1,27 @@
+{
+  "name": "momentastik",
+  "version": "1.0.0",
+  "description": "Rest Api for Momentastik App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/momentastik/momentastik_api.git"
+  },
+  "keywords": [
+    "resp",
+    "api",
+    "momentastik"
+  ],
+  "author": "Adrián Castellanos & Jaime Crespí",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/momentastik/momentastik_api/issues"
+  },
+  "homepage": "https://github.com/momentastik/momentastik_api#readme",
+  "dependencies": {
+    "mysql": "^2.11.1"
+  }
+}
