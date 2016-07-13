@@ -21,7 +21,6 @@ http.createServer (function (req, resp){
 				/*PLACES*/
 				case req.url=='/places':
 					place.getListPlaces(req, resp);
-					console.log("Writing places");
 					break;
 
 
@@ -36,6 +35,10 @@ http.createServer (function (req, resp){
 					break;
 
 				/*EVENTS*/
+				case req.url=='/events':
+					place.getListEvents(req, resp);
+					break;
+
 				case /events\/[0-9]+$/.test(req.url):
 					var idEvent = /[0-9]+/.exec(req.url);//Get the ID of the event
 					event.getEvent(req,resp,idEvent)
