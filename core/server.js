@@ -24,8 +24,8 @@ http.createServer (function (req, resp){
 					break;
 
 				case /place\/[0-9]+/.test(req.url):
-					var id = /[0-9]+/.exec(req.url);//Get the ID				
-					card.getPlace(req, resp,id);
+					var id = /[0-9]+/.exec(req.url);//Get the ID
+					place.getPlace(req, resp,id);
 
 					break;
 
