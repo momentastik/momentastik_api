@@ -23,11 +23,16 @@ http.createServer (function (req, resp){
 
 					break;
 
-				case /place\/[0-9]+/.test(req.url):
+				case /places\/[0-9]+$/.test(req.url):
 					var id = /[0-9]+/.exec(req.url);//Get the ID
 					place.getPlace(req, resp,id);
 
 					break;
+				case /places\/[0-9]+\/events/.test(req.url):
+					var idPlace = /[0-9]+/.exec(req.url);//Get the ID of the place
+					place.getPlaceEvents(req, resp,idPlace);
+
+						break;
 
 
 				default:
