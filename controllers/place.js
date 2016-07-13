@@ -15,4 +15,15 @@ exports.getListPlaces = function(req, resp){
 	});
 };
 
+exports.getPlace = function(req, resp,id){
 
+	db.executeSQL("SELECT * FROM Place WHERE Place.id == "+id, function(error, rows){
+
+		if (error){
+			httpMsgs.show500(req, resp, err);
+		}else{
+			httpMsgs.sendJson(req, resp, rows);
+		}
+
+	});
+};
