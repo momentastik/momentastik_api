@@ -8,20 +8,27 @@ var card = require('../controllers/card');
 http.createServer (function (req, resp){
 
 	switch (req.method){
-		
+
 
 		case "GET":
-			switch(req.url){
-				case '/':
-			
-					place.getListPlaces(req, resp);
+			switch(true){
+				case req.url=='/places':
+
+				place.getListPlaces(req, resp);
+				console.log("Writing places");
 					break;
 
-				case '/card':
+				case req.url=='/card':
 					card.getListCards(req, resp);
 
 					break;
-				
+
+				case /place\/[0-9]+/.test(req.url):
+					var id = /[0-9]+/.exec(req.url);//Get the ID				
+					card.getPlace(req, resp,id);
+
+					break;
+
 
 				default:
 
@@ -33,7 +40,7 @@ http.createServer (function (req, resp){
 		default:
 
 		httpMsgs.show404(req, resp);
-		
+
 	}
 
 
@@ -41,6 +48,3 @@ http.createServer (function (req, resp){
 
 	console.log("Connected at port: " + settings.webPort);
 });
-
-
-
