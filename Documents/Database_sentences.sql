@@ -17,7 +17,7 @@ password(30),
 accountEnable tinyint(1) DEFAULT 1,
 typeUser ENUM ('Admin', 'Moderator', 'User','Town_hall'),
 FOREIGN KEY (typeUser) REFERENCES TypeUser(type)
-}
+};
 
 CREATE TABLE ScoreCommentEvent{
  id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -28,7 +28,7 @@ CREATE TABLE ScoreCommentEvent{
  idEvent int ,
  FOREIGN KEY (idUser) REFERENCES User(idUser),
  FOREIGN KEY (idEvent) REFERENCES Event(idEvent)
-}
+};
 
 CREATE TABLE ScoreCommentPlace{
  id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -40,7 +40,7 @@ CREATE TABLE ScoreCommentPlace{
  FOREIGN KEY (idUser) REFERENCES User(idUser),
  FOREIGN KEY (idEvent) REFERENCES Event(idEvent)
 
-}
+};
 
 CREATE TABLE FavouritePlace{
 id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -49,7 +49,7 @@ idUser int,
 idPlace int,
 FOREIGN KEY (idUser) REFERENCES User(idUser),
 FOREIGN KEY (idPlace) REFERENCES Event(idPlace)
-}
+};
 
 CREATE TABLE FavouriteEvent{
 id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -81,7 +81,7 @@ CREATE TABLE Event{
 
 CREATE TABLE Card{
 id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
-title varchar (10),
+title varchar (30),
 urlImage varchar(50),
 idFather int(3)
 }
@@ -96,14 +96,14 @@ CREATE TABLE Place{
 
 CREATE TABLE ImageEvent{
 id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
-urlImage varchar(30),
+urlImage varchar(50),
 idEvent int,
 FOREIGN KEY (idEvent) REFERENCES Event(idEvent)
 }
 
 CREATE TABLE ImagePlace{
 id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
-urlImage varchar(30),
+urlImage varchar(50),
 idEvent int,
 FOREIGN KEY (idPlace) REFERENCES Place(idPlace)
 }

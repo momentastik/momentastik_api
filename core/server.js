@@ -2,6 +2,7 @@ var http = require('http');
 var settings = require('../settings');
 var httpMsgs = require('./httpMsgs');
 var place = require('../controllers/place');
+var card = require('../controllers/card');
 
 
 http.createServer (function (req, resp){
@@ -15,6 +16,13 @@ http.createServer (function (req, resp){
 			
 					place.getListPlaces(req, resp);
 					break;
+
+				case '/card':
+					card.getListCards(req, resp);
+
+					break;
+				
+
 				default:
 
 				httpMsgs.show404(req, resp);
