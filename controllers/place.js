@@ -2,9 +2,13 @@ var db = require('../core/db');
 var httpMsgs = require('../core/httpMsgs');
 var util = require('util');
 
-exports.getListPlaces = function(req, resp){
+exports.getListPlaces = function(req, resp,idCard){
 
-	db.executeSQL("SELECT * FROM Place", function(error, rows){
+	db.executeSQL("SELECT * FROM Place INNER JOIN R_CARD_PLACE on Place.id=R_CARD_PLACE.idPlace AND "+
+		 "R_CARD_PLACE.idCard="+idCard
+		
+		
+		, function(error, rows){
 
 		if (error){
 			httpMsgs.show500(req, resp, err);
@@ -40,3 +44,19 @@ exports.getPlaceEvents = function(req, resp,id){
 
 	});
 };
+
+
+exports.getPlaceImages = function(req, resp, idPlace){
+
+	db.executeSQL ("SELECT * FROM ImagePlace INNER JOIN Place on Place.id=ImagePlace.idPlace AND Place.id="+idPlace, function (error, rows){
+
+		if(error){
+			httpMsgs.show500(req, resp, err);
+		}else{
+			httpMsgs.sendJson(req, resp, rows);
+		}
+	});
+};
+
+
+

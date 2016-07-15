@@ -10,7 +10,7 @@ exports.executeSQL = function(sql, callback){
 			console.log("Error Connection DataBase");
 			callback(error, null);
 		}else{
-			console.log("Connected");
+			console.log("BBDD Connected");
 			
 			dbConnection.query(sql, function (error, rows, fields){
 
