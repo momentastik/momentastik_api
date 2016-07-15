@@ -26,7 +26,8 @@ http.createServer (function (req, resp){
 				case /places\?+/.test(req.url):
 
 					var parts = url.parse(req.url, true);
-					console.log(parts.query);
+					console.log(parts);
+
 					if (typeof parts.query.card_id !== 'undefined' &&
 					    typeof parts.query.longi !== 'undefined'   &&
 					    typeof parts.query.lati !== 'undefined'   &&
@@ -88,7 +89,7 @@ http.createServer (function (req, resp){
 				
 				case /events\/[0-9]+\/images/.test(req.url):
 					var idevent = /[0-9]+/.exec(req.url);//get the id of the event
-					event.geteventimages(req, resp, idevent);
+					event.getEventImages(req, resp, idevent);
 
 					break;
 
