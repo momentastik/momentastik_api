@@ -1,5 +1,5 @@
 
-DROP DATABASE IF EXISTS momentastik;
+DROP DATABASE IF EXISTS momentastik; 
 
 CREATE DATABASE momentastik;
 
