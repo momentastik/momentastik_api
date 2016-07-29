@@ -1,7 +1,7 @@
 exports.dbConfig = {
 	host: '127.0.0.1',
-	user: 'root',
-	password: '123',
+	user: 'bc5bf2d3332de3', //root
+	password: '5d0a407c',
 	database: 'momentastik'
 };
 
