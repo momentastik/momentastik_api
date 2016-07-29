@@ -1,5 +1,5 @@
 exports.dbConfig = {
-	host: '-cdbr-iron-east-04.cleardb.net',
+	host: 'us-cdbr-iron-east-04.cleardb.net',
 	user: 'b6c554615a1711', 
 	password: '26a49be9',
 	database: 'heroku_e2ac4ee7ad1fbad'
