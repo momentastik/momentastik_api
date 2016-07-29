@@ -16,7 +16,6 @@ http.createServer (function (req, resp){
 		case "GET":
 			switch(true){
 
-
 				/*CARDS*/
 				case /cards$/.test(req.url):
 
