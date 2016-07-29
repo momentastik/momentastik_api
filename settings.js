@@ -5,7 +5,9 @@ exports.dbConfig = {
 	database: 'momentastik'
 };
 
-exports.webPort = 1337;
+var webPortApp = process.env.PORT || 1337;
+
+exports.webPort = webPortApp;
 
 
 exports.headerResponse = {
