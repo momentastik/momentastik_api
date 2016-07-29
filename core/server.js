@@ -16,10 +16,6 @@ http.createServer (function (req, resp){
 		case "GET":
 			switch(true){
 
-				case true:
-					resp.end('ok');
-					break;
-
 				/*CARDS*/
 				case /cards$/.test(req.url):
 
