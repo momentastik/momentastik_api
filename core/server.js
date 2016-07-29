@@ -16,11 +16,6 @@ http.createServer (function (req, resp){
 		case "GET":
 			switch(true){
 
-				case true:
-					console.log("OKIGASD");
-					resp.writeHead(200, {'content-application': 'text/html'});					resp.end("HOLA");
-					break;
-
 
 				/*CARDS*/
 				case /cards$/.test(req.url):
