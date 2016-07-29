@@ -4,7 +4,8 @@
   "description": "Rest Api for Momentastik App",
   "main": "core/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"start" : "node core/server.js"
   },
   "repository": {
     "type": "git",
